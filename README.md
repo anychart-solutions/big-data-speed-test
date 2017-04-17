@@ -3,7 +3,7 @@
 ## Big Data Speed Test
 Our JavaScript charts support rendering thousands of data points in milliseconds. Run a speedtest or try real-time live data streaming.
 
-[<img src="http://static.anychart.com/images/github/web-audience.png?1" alt="Big Data Speed Test | AnyChart">](http://anychart.com/solutions/big-data-speed-test/)
+[<img src="http://static.anychart.com/images/github/big-data-speed-test.png" alt="Big Data Speed Test | AnyChart">](http://anychart.com/solutions/big-data-speed-test/)
 
 ## Package directory
 ```
@@ -36,7 +36,7 @@ Output directory that contains compiled `js` and `css` files.
 Source code directory.
 
 - **gulpfile.js** -
-gulpfile.js contains automating tasks to development workflow.
+Contains automating tasks to development workflow.
 
 - **package.json** -
 Package manager configuration file.
