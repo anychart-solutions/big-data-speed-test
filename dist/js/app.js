@@ -169,9 +169,7 @@ anychart.onDocumentReady(function () {
     $('.select[data-action-type]').on('change', changeChart);
 });
 
-function changeChart() {
-    debugger;
-    
+function changeChart() {    
     var $optionSelected = $(this).find("option:selected");
     var value = $optionSelected.val();
     var type = $(this).attr('data-action-type');
