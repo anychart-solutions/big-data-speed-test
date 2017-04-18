@@ -26,6 +26,7 @@ Our JavaScript charts support rendering thousands of data points in milliseconds
 │   package.json
 │   LICENSE
 │   README.md
+│   index.html
 │   ...
 ```
 
