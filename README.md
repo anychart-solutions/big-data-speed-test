@@ -25,7 +25,7 @@ Now, when all environment is up and running, you may use following instructions 
 ### With no additional requirements
 This option doesn't require Node.js and npm installation.
 Also it imposes some limitations on demo source code modification process.
-* To run demo, please, open index.html page.
+* To run the demo, please, open index.html page.
 * To modify demo stylesheets, please add your own `<styles>` section to `src/index.html` file.
 * Unfortunately, here is no way to modify demo JavaScript code except adding your own `<script>` section to `src/index.html` file.
 * To modify demo markup, edit `src/index.html` file.
@@ -42,7 +42,7 @@ To run demo development environment, please, ensure you have installed [Git](htt
 * To install git, visit [installation instructions|https://git-scm.com/book/en/v1/Getting-Started-Installing-Git] page.
 
 ## Links
-* [Technical Indicators Demo at AnyChart.Com](https://www.anychart.com/solutions/big-data-speed-test/)
+* [AnyStock Speedtest Demo at AnyChart.Com](https://www.anychart.com/solutions/big-data-speed-test/)
 * [Documentation](https://docs.anychart.com)
 * [JavaScript API Reference](https://api.anychart.com)
 * [Code Playground](https://playground.anychart.com)
