@@ -57,8 +57,12 @@
 
                 <div class="form-group">
                     <select id="anystock-speed-test-chartType-select" class="select" data-style="btn-lg" data-width="270" data-action-type="configurationType">
-                        <option value="ohlc-basic" selected="selected" data-chart="stock-ohlc">OHLC Chart</option>
-                        <option value="ohlc-advanced" data-chart="stock-ohlc">OHLC Chart with Volume</option>
+                        <option value="ohlc-basic" data-chart="stock-ohlc" selected="selected">OHLC</option>
+                        <option value="ohlc-advanced" data-chart="stock-ohlc">OHLC with Volume</option>
+                        <option value="candlestick-basic" data-chart="stock-ohlc">Candlestick Chart</option>
+                        <option value="candlestick-advanced" data-chart="stock-ohlc">Candlestick with Volume
+                        <option value="line-basic" data-chart="stock-ohlc">Line</option>
+                        <option value="spline-basic" data-chart="stock-ohlc">Spline</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -68,7 +72,6 @@
                         <option value="250000">250,000 Data Points</option>
                         <option value="500000">500,000 Data Points</option>
                         <option value="1000000">1,000,000 Data Points</option>
-
                     </select>
                 </div>
                 <h5 class="anystock-speed-test-streamingHeader">Streaming</h5>
@@ -84,7 +87,8 @@
                 </div>
                 <div class="form-group anystock-speed-test-streamInterval">
                     <select class="select" data-style="btn-lg" data-width="90" data-action-type="streamingInterval">
-                        <option value="60" selected="selected">60ms</option>
+                        <option value="20" selected="selected">20ms</option>
+                        <option value="60">60ms</option>
                         <option value="80">80ms</option>
                         <option value="100">100ms</option>
                     </select>

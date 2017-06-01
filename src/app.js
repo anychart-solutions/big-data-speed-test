@@ -135,7 +135,7 @@ function generateSplineData(rowsCount, opt_startVolume) {
 
 var rawData;
 var perfMeter;
-var ohlcMapping, columnMapping, scrollerMapping;
+var columnMapping, scrollerMapping;
 var streamingTimerId;
 var streamingAverage = NaN;
 
@@ -146,8 +146,8 @@ var dataTable;
 
 var chartConfiguration = 'ohlc-basic';
 var initialPointsCount = 50000;
-var streamPointsCount = 100;
-var streamingInterval = 60;
+var streamPointsCount = 500;
+var streamingInterval = 20;
 
 var index = 0;
 
@@ -233,11 +233,14 @@ function execCreateStock(pointsCount, chartConfiguration) {
     perfMeter.start('Creating data storage');
     dataTable = anychart.data.table(0);
     dataTable.addData(rawData.data);
-    ohlcMapping = dataTable.mapAs();
-    ohlcMapping.addField('open', 1, 'first');
-    ohlcMapping.addField('high', 2, 'max');
-    ohlcMapping.addField('low', 3, 'min');
-    ohlcMapping.addField('close', 4, 'last');
+    mainMapping = dataTable.mapAs();
+    // first 3 fields for OHLC and Candlestick
+    mainMapping.addField('open', 1, 'first');
+    mainMapping.addField('high', 2, 'max');
+    mainMapping.addField('low', 3, 'min');
+    mainMapping.addField('close', 4, 'last');
+    // this one for line and spline
+    mainMapping.addField('value', 1, 'first');
 
     columnMapping = dataTable.mapAs();
     columnMapping.addField('value', 5, 'sum');
@@ -247,18 +250,35 @@ function execCreateStock(pointsCount, chartConfiguration) {
 
     perfMeter.end('Creating data storage');
 
-
     perfMeter.start('Creating chart instance');
     chart = anychart.stock();
     chart.listen('chartDraw', function () {
         $('#loader-wrapper').remove();
         hidePreloader();
     });
-    if (chartConfiguration == 'ohlc-basic') {
-        setBasicChartSettings();
-    } else {
-        setAdvancedChartSettings();
+    switch(chartConfiguration) {
+        case 'ohlc-basic':
+            setBasicChartSettings('ohlc');
+            break;
+        case 'ohlc-advanced':
+            setAdvancedChartSettings('ohlc');
+            break;
+        case 'candlestick-basic':
+            setBasicChartSettings('candlestick');
+            break;
+        case 'candlestick-advanced':
+            setAdvancedChartSettings('candlestick');
+            break;
+        case 'line-basic':
+            setBasicChartSettings('line');
+            break;
+        case 'spline-basic':
+            setBasicChartSettings('spline');
+            break;
+        default:
+            setBasicChartSettings();
     }
+    
     chart.container('anystock-speed-test-base-chart');
     perfMeter.end('Creating chart instance');
 
@@ -278,40 +298,25 @@ function execCreateStock(pointsCount, chartConfiguration) {
     resultContainer.append(generateHTMLStatRecord('Total', perfMeter.get('Total')));
 }
 
-function setBasicChartSettings() {
-    var ohlcSeries = chart.plot(0).ohlc(ohlcMapping);
-    ohlcSeries.name('OHLC Series');
-    ohlcSeries.tooltip().textFormatter(ohlcTextformatter);
+function setBasicChartSettings(type) {
+    chart.plot(0).defaultSeriesType(type);
+    chart.plot(0).addSeries(mainMapping);
+    chart.plot(0).getSeries(0).name('Main Series');
     chart.padding(10, 10, 10, 50);
-    chart.plot(0).yAxis();
-    chart.plot(0).grid(0).layout('h');
-    chart.plot(0).minorGrid(0).layout('h');
-    chart.plot(0).grid(1).layout('v');
-    chart.plot(0).minorGrid(1).layout('v');
     chart.scroller().line(scrollerMapping);
 }
 
-function setAdvancedChartSettings() {
-    var ohlcSeries = chart.plot(0).ohlc(ohlcMapping);
-    ohlcSeries.tooltip().textFormatter(ohlcTextformatter);
-    ohlcSeries.name('OHLC Series');
+function setAdvancedChartSettings(type) {
+    chart.plot(0).defaultSeriesType(type);
+    var mainSeries = chart.plot(0).addSeries(mainMapping);
+    mainSeries[0].name('Main Series');
 
-    var columbSeies = chart.plot(1).column(columnMapping);
-    columbSeies.tooltip().textFormatter(volumeTextformatter);
-    columbSeies.name('Column');
+    var columnSeies = chart.plot(1).column(columnMapping);
+    columnSeies.name('Column');
 
     chart.padding(10, 10, 10, 50);
-    chart.plot(0).yAxis();
     chart.plot(1).height('30%');
-    chart.plot(0).grid(0).layout('h');
-    chart.plot(0).minorGrid(0).layout('h');
-    chart.plot(0).grid(1).layout('v');
-    chart.plot(0).minorGrid(1).layout('v');
-    chart.plot(1).grid(0).layout('h');
-    chart.plot(1).minorGrid(0).layout('h');
-    chart.plot(1).yScale().minimum(0);
-    chart.plot(1).grid(1).layout('v');
-    chart.plot(1).minorGrid(1).layout('v');
+    
     chart.plot(1).yAxis().labels().textFormatter(function () {
         var val = this['tickValue'];
         var neg = val < 0;
@@ -407,17 +412,6 @@ function showPreloader() {
 
 function hidePreloader() {
     $('#loader-wrapper-chart').hide();
-}
-
-function ohlcTextformatter() {
-    return 'Open: ' + parseFloat(this['open']).toFixed(2) + '\n' +
-        'High: ' + parseFloat(this['high']).toFixed(2) + '\n' +
-        'Low: ' + parseFloat(this['low']).toFixed(2) + '\n' +
-        'Close: ' + parseFloat(this['close']).toFixed(2);
-}
-
-function volumeTextformatter() {
-    return 'Volume: ' + parseFloat(this['value']).toFixed();
 }
 
 function generateHTMLStatRecord(title, value, postfix, opt_id) {
