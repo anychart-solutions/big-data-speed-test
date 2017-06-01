@@ -3,12 +3,12 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
+var htmlmin = require('gulp-htmlmin');
 var plumber = require('gulp-plumber');
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
 var sourcemaps = require('gulp-sourcemaps');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
+var open = require('gulp-open');
 
 var config = {
     sourceDir: './src/',
@@ -17,55 +17,51 @@ var config = {
 
 /* Scripts task */
 gulp.task('scripts', function () {
-    var jsDir = config.publicDir + 'js';
-
     return gulp.src([config.sourceDir + 'js/perfomance.js', config.sourceDir + 'js/data-generator.js', config.sourceDir + 'js/index.js'])
         .pipe(concat('app.js'))
-        .pipe(gulp.dest(jsDir))
-        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(config.sourceDir))
         .pipe(uglify())
-        .pipe(gulp.dest(jsDir));
+        .pipe(gulp.dest(config.publicDir));
 });
 
 /* Styles task */
 gulp.task('styles', function () {
-    var cssDir = config.publicDir + 'css';
-
     return gulp.src(config.sourceDir + '/sass/app.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write('.'))
         .pipe(autoprefixer())
-        .pipe(gulp.dest(cssDir))
+        .pipe(gulp.dest(config.sourceDir))
         .pipe(cleanCSS())
+        .pipe(gulp.dest(config.publicDir))
+});
+
+/* HTML min */
+gulp.task('minifyHtml', function () {
+    return gulp.src(config.sourceDir + 'index.html')
+        .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(cssDir))
+        .pipe(gulp.dest(config.publicDir));
 });
 
-// Static Server + watching scss/html files
-gulp.task('serve', function () {
-
-    browserSync.init({
-        server: "./"
-    });
-
-    gulp.watch(config.sourceDir + 'sass/**/*.*', ['styles']);
-    gulp.watch(config.sourceDir + 'js/**/*.*', ['scripts']);
-    gulp.watch(config.publicDir + 'css/*.css').on('change', browserSync.reload);
-    gulp.watch("*.html").on('change', browserSync.reload);
+// Open file with default application
+gulp.task('openSrc', function(){
+    gulp.src('./src/index.html')
+        .pipe(open());
 });
 
-
-/* Reload task */
-gulp.task('bs-reload', function () {
-    browserSync.reload();
+// Open file with default application
+gulp.task('openDist', function(){
+    gulp.src('./dist/index.min.html')
+        .pipe(open());
 });
 
 /* Watch scss, js and html files, doing different things with each. */
-gulp.task('default', ['scripts', 'styles', 'serve'], function () {
+gulp.task('default', ['scripts', 'styles', 'openSrc', 'minifyHtml'], function () {
     /* Watch scss, run the sass task on change. */
     gulp.watch(config.sourceDir + 'sass/**/*.*', ['styles']);
     /* Watch app.js file, run the scripts task on change. */
     gulp.watch(config.sourceDir + 'js/**/*.*', ['scripts']);
-    /* Watch .html files, run the bs-reload task on change. */
-    gulp.watch(['*.html'], ['bs-reload']);
 });
+
+/* Production */
+gulp.task('prod', ['scripts', 'styles', 'minifyHtml', 'openDist']);

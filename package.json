@@ -1,13 +1,44 @@
 {
-  "private": true,
+  "name": "anychart-big-data-speed-test",
+  "description": "Our JavaScript charts support rendering thousands of data points in milliseconds. Run a speedtest or try real-time live data streaming.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anychart-solutions/big-data-speed-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anychart-solutions/big-data-speed-test/issues"
+  },
+  "author": "AnyChart <contact@anychart.com> (https://www.anychart.com)",
+  "license": "Apache-2.0",
+  "keywords": [
+    "anychart",
+    "anystock",
+    "anygantt",
+    "anymap",
+    "charts",
+    "javascript charts",
+    "ajax charts",
+    "plots",
+    "line charts",
+    "bar charts",
+    "pie charts",
+    "javascript plots",
+    "ajax plots",
+    "javascript",
+    "SVG",
+    "HTML5",
+    "framework",
+    "VML"
+  ],
   "devDependencies": {
-    "browser-sync": "^2.14.0",
     "gulp": "^3.9.1",
+    "gulp-open": "^2.0.0",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "^2.0.12",
     "gulp-concat": "^2.6.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",

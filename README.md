@@ -5,53 +5,47 @@ Our JavaScript charts support rendering thousands of data points in milliseconds
 
 [<img src="http://static.anychart.com/images/github/big-data-speed-test.png" alt="Big Data Speed Test | AnyChart">](http://anychart.com/solutions/big-data-speed-test/)
 
-## Package directory
+## Modifying source code
+There are two possible options of modifying demo source code, [using Node.js and npm](#using-nodejs-and-npm)
+and [with no additional requirements](#with-no-additional-requirements).
+
+Please, ensure you have all [requirements](#installing-requirements) installed before running.
+Then, to run demo with Nodej.js and npm, use following commands:
 ```
-├── dist
-│   ├── css
-│        ├── app.css
-│        ├── app.min.css
-│   ├── js
-│        ├── app.js
-│        ├── app.min.js
-├── src
-│   ├── js
-│        ├── data-generator.js
-│        ├── index.js
-│        ├── perfomance.js
-│   ├── sass
-│        ├── style.scss
-│         ...
-│   gulpfile.js
-│   package.json
-│   LICENSE
-│   README.md
-│   index.html
-│   ...
+git clone git@github.com:anychart-solutions/big-data-speed-test.git
+cd big-data-speed-test
+gulp
 ```
 
-- **dist/** -
-Output directory that contains compiled `js` and `css` files.
+Now, when all environment is up and running, you may use following instructions to modify source code:
+* To modify demo stylesheets, edit `src/sass/*.scss` files.
+* To modify demo JavaScript, edit `src/js/*.js` file.
+* To modify demo markup, edit `src/index.html` file.
 
-- **src/** -
-Source code directory.
+### With no additional requirements
+This option doesn't require Node.js and npm installation.
+Also it imposes some limitations on demo source code modification process.
+* To run demo, please, open index.html page.
+* To modify demo stylesheets, please add your own `<styles>` section to `src/index.html` file.
+* Unfortunately, here is no way to modify demo JavaScript code except adding your own `<script>` section to `src/index.html` file.
+* To modify demo markup, edit `src/index.html` file.
+* To make a production build you need to copy all required files to distribution folder by your own.
 
-- **gulpfile.js** -
-Contains automating tasks to development workflow.
+## Running on production
+All production files are located in [distribution](https://github.com/anychart-solutions/big-data-speed-test/tree/master/dist) folder.
+In case you did some modification of the source code, you need to rebuild production files as mentioned in [Using Node.js and npm](#using-node.js-and-npm) section or manually.
 
-- **package.json** -
-Package manager configuration file.
-
-## Build
-1) Run `npm install` command to load all required npm modules.
-2) Run `gulp` to start demo. Gulp watch scss, js and html files and update dist files if anything change.
+## Installing requirements
+To run demo development environment, please, ensure you have installed [Git](https://git-scm.com/), [Node.js](https://nodejs.org/), [npm](https://www.npmjs.com/) and [gulp](http://gulpjs.com/), overwise:
+* To install Node.js and npm, visit [installation instructions](https://docs.npmjs.com/getting-started/installing-node) page.
+* To install gulp globally using `npm install gulp -g` command.
+* To install git, visit [installation instructions|https://git-scm.com/book/en/v1/Getting-Started-Installing-Git] page.
 
 ## Links
-* [Big Data Charts Demo at AnyChart.Com](https://www.anychart.com/solutions/big-data-speed-test/)
+* [Technical Indicators Demo at AnyChart.Com](https://www.anychart.com/solutions/big-data-speed-test/)
 * [Documentation](https://docs.anychart.com)
 * [JavaScript API Reference](https://api.anychart.com)
 * [Code Playground](https://playground.anychart.com)
-* [Technical Support](https://anychart.com/support)
 
 ## License
 [© AnyChart.com - JavaScript charts](http://www.anychart.com). Released under the [Apache 2.0 License](https://github.com/anychart-solutions/big-data-speed-test/blob/master/LICENSE).

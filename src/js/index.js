@@ -215,6 +215,9 @@ function toggleStreaming() {
 function startStreaming() {
     $('#start-base-chart-stream-btn').html('Stop Data Streaming');
 
+    // set scroller range
+    chart.selectRange('max');
+
     streamingTimerId = setInterval(function () {
 
         if (requestAnimationFrame) {
