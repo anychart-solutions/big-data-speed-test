@@ -39,7 +39,6 @@ gulp.task('styles', function () {
 gulp.task('minifyHtml', function () {
     return gulp.src(config.sourceDir + 'index.html')
         .pipe(htmlmin({collapseWhitespace: true}))
-        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(config.publicDir));
 });
 
