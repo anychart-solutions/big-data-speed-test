@@ -1,6 +1,6 @@
 [<img src="https://cdn.anychart.com/images/logo-transparent-segoe.png?2" width="234px" alt="AnyChart - Robust JavaScript/HTML5 Chart library for any project">](http://www.anychart.com)
 
-## Big Data Speed Test
+## AnyStock Big Data Speed Test
 Our JavaScript charts support rendering thousands of data points in milliseconds. Run a speedtest or try real-time live data streaming.
 
 [<img src="http://static.anychart.com/images/github/big-data-speed-test.png" alt="Big Data Speed Test | AnyChart">](http://anychart.com/solutions/big-data-speed-test/)
@@ -25,7 +25,7 @@ Now, when all environment is up and running, you may use following instructions 
 ### With no additional requirements
 This option doesn't require Node.js and npm installation.
 Also it imposes some limitations on demo source code modification process.
-* To run demo, please, open index.html page.
+* To run the demo, please, open index.html page.
 * To modify demo stylesheets, please add your own `<styles>` section to `src/index.html` file.
 * Unfortunately, here is no way to modify demo JavaScript code except adding your own `<script>` section to `src/index.html` file.
 * To modify demo markup, edit `src/index.html` file.
@@ -33,7 +33,10 @@ Also it imposes some limitations on demo source code modification process.
 
 ## Running on production
 All production files are located in [distribution](https://github.com/anychart-solutions/big-data-speed-test/tree/master/dist) folder.
-In case you did some modification of the source code, you need to rebuild production files as mentioned in [Using Node.js and npm](#using-node.js-and-npm) section or manually.
+In case you did some modification of the source code, you need to rebuild production files as mentioned in [Using Node.js and npm](#using-node.js-and-npm) section or manually using following command.
+```
+gulp prod
+```
 
 ## Installing requirements
 To run demo development environment, please, ensure you have installed [Git](https://git-scm.com/), [Node.js](https://nodejs.org/), [npm](https://www.npmjs.com/) and [gulp](http://gulpjs.com/), overwise:
@@ -42,7 +45,7 @@ To run demo development environment, please, ensure you have installed [Git](htt
 * To install git, visit [installation instructions|https://git-scm.com/book/en/v1/Getting-Started-Installing-Git] page.
 
 ## Links
-* [Technical Indicators Demo at AnyChart.Com](https://www.anychart.com/solutions/big-data-speed-test/)
+* [AnyStock Speedtest Demo at AnyChart.Com](https://www.anychart.com/solutions/big-data-speed-test/)
 * [Documentation](https://docs.anychart.com)
 * [JavaScript API Reference](https://api.anychart.com)
 * [Code Playground](https://playground.anychart.com)
