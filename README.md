@@ -1,9 +1,9 @@
-[<img src="https://cdn.anychart.com/images/logo-transparent-segoe.png?2" width="234px" alt="AnyChart - Robust JavaScript/HTML5 Chart library for any project">](http://www.anychart.com)
+[<img src="https://cdn.anychart.com/images/logo-transparent-segoe.png?2" width="234px" alt="AnyChart - Robust JavaScript/HTML5 Chart library for any project">](https://www.anychart.com)
 
 ## AnyStock Big Data Speed Test
 Our JavaScript charts support rendering thousands of data points in milliseconds. Run a speedtest or try real-time live data streaming.
 
-[<img src="http://static.anychart.com/images/github/big-data-speed-test.png" alt="Big Data Speed Test | AnyChart">](http://anychart.com/solutions/big-data-speed-test/)
+[<img src="http://static.anychart.com/images/github/big-data-speed-test.png" alt="Big Data Speed Test | AnyChart">](https://www.anychart.com/solutions/big-data-speed-test/)
 
 ## Modifying source code
 There are two possible options of modifying demo source code, [using Node.js and npm](#using-nodejs-and-npm)
@@ -51,4 +51,5 @@ To run demo development environment, please, ensure you have installed [Git](htt
 * [Code Playground](https://playground.anychart.com)
 
 ## License
-[© AnyChart.com - JavaScript charts](http://www.anychart.com). Released under the [Apache 2.0 License](https://github.com/anychart-solutions/big-data-speed-test/blob/master/LICENSE).
+[© AnyChart.com - JavaScript charts](https://www.anychart.com). 
+[![Analytics](https://ga-beacon.appspot.com/UA-228820-4/Solutions/Big-Data-Speed-Test?pixel&useReferer)](https://github.com/igrigorik/ga-beacon)
