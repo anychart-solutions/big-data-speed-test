@@ -3,7 +3,7 @@
 ## AnyStock Big Data Speed Test
 Our JavaScript charts support rendering thousands of data points in milliseconds. Run a speedtest or try real-time live data streaming.
 
-[<img src="http://static.anychart.com/images/github/big-data-speed-test.png" alt="Big Data Speed Test | AnyChart">](http://anychart.com/solutions/big-data-speed-test/)
+[<img src="https://static.anychart.com/images/github/big-data-speed-test.png" alt="Big Data Speed Test | AnyChart">](http://anychart.com/solutions/big-data-speed-test/)
 
 ## Modifying source code
 There are two possible options of modifying demo source code, [using Node.js and npm](#using-nodejs-and-npm)
