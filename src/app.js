@@ -279,6 +279,7 @@ function execCreateStock(pointsCount, chartConfiguration) {
             setBasicChartSettings();
     }
 
+    chart.crosshair().xLabel(false).yLabel(false);
     chart.container('anystock-speed-test-base-chart');
     perfMeter.end('Creating chart instance');
 
@@ -317,7 +318,7 @@ function setAdvancedChartSettings(type) {
     chart.padding(10, 10, 10, 50);
     chart.plot(1).height('30%');
 
-    chart.plot(1).yAxis().labels().textFormatter(function () {
+    chart.plot(1).yAxis().labels().format(function () {
         var val = this['tickValue'];
         var neg = val < 0;
         val = Math.abs(val);
