@@ -10,7 +10,7 @@ There are two possible options of modifying demo source code, [using Node.js and
 and [with no additional requirements](#with-no-additional-requirements).
 
 Please, ensure you have all [requirements](#installing-requirements) installed before running.
-Then, to run demo with Nodej.js and npm, use following commands:
+Then, to run demo with Node.js and npm, use following commands:
 ```
 git clone git@github.com:anychart-solutions/big-data-speed-test.git
 cd big-data-speed-test
@@ -42,7 +42,7 @@ gulp prod
 To run demo development environment, please, ensure you have installed [Git](https://git-scm.com/), [Node.js](https://nodejs.org/), [npm](https://www.npmjs.com/) and [gulp](http://gulpjs.com/), overwise:
 * To install Node.js and npm, visit [installation instructions](https://docs.npmjs.com/getting-started/installing-node) page.
 * To install gulp globally using `npm install gulp -g` command.
-* To install git, visit [installation instructions|https://git-scm.com/book/en/v1/Getting-Started-Installing-Git] page.
+* To install git, visit [installation instructions](https://git-scm.com/book/en/v1/Getting-Started-Installing-Git) page.
 
 ## Links
 * [AnyStock Speedtest Demo at AnyChart.Com](https://www.anychart.com/solutions/big-data-speed-test/)
