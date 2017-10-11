@@ -88,49 +88,6 @@ function generate5MinsOHLCData(startDate, rowsCount, openValue, spread, opt_star
     };
 }
 
-function generateSplineData(rowsCount, opt_startVolume) {
-    var index = -1;
-
-    var data = [];
-    var value1 = randVolume(opt_startVolume);
-    var value2 = randVolume(opt_startVolume);
-    var value3 = randVolume(opt_startVolume);
-    var value4 = randVolume(opt_startVolume);
-    var value5 = randVolume(opt_startVolume);
-
-    while (++index < rowsCount) {
-        value1 = randVolume(value1);
-        value2 = randVolume(value2);
-        value3 = randVolume(value3);
-        value4 = randVolume(value4);
-        value5 = randVolume(value5);
-
-        data.push([
-            index,
-            value1,
-            value2,
-            value3,
-            value4
-        ]);
-    }
-
-    function randVolume(opt_prev) {
-        if (!opt_prev) {
-            return Math.round(Math.random() * 1e3) + 1e3;
-        }
-        var diff = Math.round(Math.random() * 2e2) - 1e3;
-        return Math.abs(opt_prev + diff);
-    }
-
-    return {
-        data: data,
-        lastValue1: value1,
-        lastValue2: value2,
-        lastValue3: value3,
-        lastValue4: value4
-    };
-}
-
 
 
 var rawData;
@@ -169,7 +126,7 @@ anychart.onDocumentReady(function () {
     $('.select[data-action-type]').on('change', changeChart);
 });
 
-function changeChart() {    
+function changeChart() {
     var $optionSelected = $(this).find("option:selected");
     var value = $optionSelected.val();
     var type = $(this).attr('data-action-type');
@@ -278,7 +235,7 @@ function execCreateStock(pointsCount, chartConfiguration) {
         default:
             setBasicChartSettings();
     }
-    
+
     chart.container('anystock-speed-test-base-chart');
     perfMeter.end('Creating chart instance');
 
@@ -316,8 +273,8 @@ function setAdvancedChartSettings(type) {
 
     chart.padding(10, 10, 10, 50);
     chart.plot(1).height('30%');
-    
-    chart.plot(1).yAxis().labels().textFormatter(function () {
+
+    chart.plot(1).yAxis().labels().format(function () {
         var val = this['tickValue'];
         var neg = val < 0;
         val = Math.abs(val);
@@ -345,7 +302,6 @@ function isStreaming() {
 
 function toggleStreaming() {
     if (!isStreaming()) {
-
         startStreaming();
     } else {
         stopStreaming();
@@ -354,9 +310,6 @@ function toggleStreaming() {
 
 function startStreaming() {
     $('#start-base-chart-stream-btn').html('Stop Data Streaming');
-
-    // set scroller range
-    chart.selectRange('max');
 
     streamingTimerId = setInterval(function () {
 
@@ -434,4 +387,3 @@ function addCommas(nStr) {
     }
     return x1 + x2;
 }
-

@@ -1,16 +1,16 @@
-[<img src="https://cdn.anychart.com/images/logo-transparent-segoe.png?2" width="234px" alt="AnyChart - Robust JavaScript/HTML5 Chart library for any project">](http://www.anychart.com)
+[<img src="https://cdn.anychart.com/images/logo-transparent-segoe.png?2" width="234px" alt="AnyChart - Robust JavaScript/HTML5 Chart library for any project">](https://www.anychart.com)
 
 ## AnyStock Big Data Speed Test
 Our JavaScript charts support rendering thousands of data points in milliseconds. Run a speedtest or try real-time live data streaming.
 
-[<img src="https://static.anychart.com/images/github/big-data-speed-test.png" alt="Big Data Speed Test | AnyChart">](http://anychart.com/solutions/big-data-speed-test/)
+[<img src="https://static.anychart.com/images/github/big-data-speed-test.png" alt="Big Data Speed Test | AnyChart">](https://www.anychart.com/solutions/big-data-speed-test/)
 
 ## Modifying source code
 There are two possible options of modifying demo source code, [using Node.js and npm](#using-nodejs-and-npm)
 and [with no additional requirements](#with-no-additional-requirements).
 
 Please, ensure you have all [requirements](#installing-requirements) installed before running.
-Then, to run demo with Nodej.js and npm, use following commands:
+Then, to run demo with Node.js and npm, use following commands:
 ```
 git clone git@github.com:anychart-solutions/big-data-speed-test.git
 cd big-data-speed-test
@@ -42,7 +42,7 @@ gulp prod
 To run demo development environment, please, ensure you have installed [Git](https://git-scm.com/), [Node.js](https://nodejs.org/), [npm](https://www.npmjs.com/) and [gulp](http://gulpjs.com/), overwise:
 * To install Node.js and npm, visit [installation instructions](https://docs.npmjs.com/getting-started/installing-node) page.
 * To install gulp globally using `npm install gulp -g` command.
-* To install git, visit [installation instructions|https://git-scm.com/book/en/v1/Getting-Started-Installing-Git] page.
+* To install git, visit [installation instructions](https://git-scm.com/book/en/v1/Getting-Started-Installing-Git) page.
 
 ## Links
 * [AnyStock Speedtest Demo at AnyChart.Com](https://www.anychart.com/solutions/big-data-speed-test/)
@@ -51,4 +51,10 @@ To run demo development environment, please, ensure you have installed [Git](htt
 * [Code Playground](https://playground.anychart.com)
 
 ## License
-[© AnyChart.com - JavaScript charts](http://www.anychart.com). Released under the [Apache 2.0 License](https://github.com/anychart-solutions/big-data-speed-test/blob/master/LICENSE).
+AnyChart Big Data Speed Test solution includes two parts:
+- Code of the solution that allows to use Javascript library (in this case, AnyChart) to create a demo. You can use, edit, modify it, use it with other Javascript libraries without any restrictions. It is released under [Apache 2.0 License](https://github.com/anychart-solutions/big-data-speed-test/blob/master/LICENSE).
+- AnyChart JavaScript library. It is released under Commercial license. You can test this plugin with the trial version of AnyChart. Our trial version is not limited by time and doesn't contain any feature limitations. Check details [here](https://www.anychart.com/buy/).
+
+If you have any questions regarding licensing - please contact us. <sales@anychart.com>
+
+[![Analytics](https://ga-beacon.appspot.com/UA-228820-4/Solutions/big-data-speed-test?pixel&useReferer)](https://github.com/igrigorik/ga-beacon)
