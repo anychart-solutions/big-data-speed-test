@@ -144,7 +144,6 @@ function execCreateStock(pointsCount, chartConfiguration) {
             setBasicChartSettings();
     }
 
-    chart.crosshair().xLabel(false).yLabel(false);
     chart.container('anystock-speed-test-base-chart');
     perfMeter.end('Creating chart instance');
 
