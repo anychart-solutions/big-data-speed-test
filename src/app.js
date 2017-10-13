@@ -259,7 +259,7 @@ function setBasicChartSettings(type) {
     chart.plot(0).defaultSeriesType(type);
     chart.plot(0).addSeries(mainMapping);
     chart.plot(0).getSeries(0).name('Main Series');
-    chart.padding(10, 10, 10, 50);
+    chart.padding(10, 10, 10, 65);
     chart.scroller().line(scrollerMapping);
 }
 
