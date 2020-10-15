@@ -8,6 +8,8 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 	<meta name="author" content="anychart.com">
+	<meta name="description"
+		content="Our JavaScript charts support rendering thousands of data points in milliseconds. Run a speedtest or try real-time live data streaming. | Fullscreen version">
 
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<title>AnyChart Big Data Speed Test</title>
@@ -23,7 +25,8 @@
 	<link rel="stylesheet" href="../node_modules/anychart/dist/fonts/css/anychart-font.min.css">
 
 	<!-- Latest compiled and minified CSS Bootstrap Select -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 
 	<!-- css -->
 	<link rel="stylesheet" href="app.css">
@@ -58,7 +61,7 @@
 
 			<div class="form-group">
 				<select id="anystock-speed-test-chartType-select" class="select" data-style="btn-lg" data-width="270"
-				 data-action-type="configurationType">
+					data-action-type="configurationType">
 					<option value="ohlc-basic" data-chart="stock-ohlc" selected="selected">OHLC</option>
 					<option value="ohlc-advanced" data-chart="stock-ohlc">OHLC with Volume</option>
 					<option value="candlestick-basic" data-chart="stock-ohlc">Candlestick Chart</option>
@@ -68,7 +71,8 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<select class="select" data-style="btn-lg" data-width="270" id="initial-points-count" data-action-type="initialPointsCount">
+				<select class="select" data-style="btn-lg" data-width="270" id="initial-points-count"
+					data-action-type="initialPointsCount">
 					<option value="50000" selected="selected">50,000 Data Points</option>
 					<option value="100000">100,000 Data Points</option>
 					<option value="250000">250,000 Data Points</option>
@@ -79,7 +83,8 @@
 			<h5 class="anystock-speed-test-streamingHeader">Streaming</h5>
 
 			<div class="form-group anystock-speed-test-streamPointsCount">
-				<select class="select" data-style="btn-lg" data-width="170" id="stream-points-count" data-action-type="streamPointsCount">
+				<select class="select" data-style="btn-lg" data-width="170" id="stream-points-count"
+					data-action-type="streamPointsCount">
 					<option value="100" selected="selected">100 Data Points</option>
 					<option value="500">500 Data Points</option>
 					<option value="1000">1000 Data Points</option>
