@@ -54,16 +54,15 @@ p, ul, ol {
   &-controls {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 15px;
     min-width: 270px;
   }
 
   &-result {
     position: absolute;
-    height: 100%;
     width: 270px;
     min-width: 270px;
-    right: 0;
+    right: 15px;
     top: 310px;
   }
 

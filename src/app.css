@@ -148,15 +148,14 @@ p, ul, ol {
 .anystock-speed-test-controls {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 15px;
   min-width: 270px; }
 
 .anystock-speed-test-result {
   position: absolute;
-  height: 100%;
   width: 270px;
   min-width: 270px;
-  right: 0;
+  right: 15px;
   top: 310px; }
 
 .anystock-speed-test-result-row-title {
