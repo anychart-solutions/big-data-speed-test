@@ -34,9 +34,9 @@ yarn dev
 
 Now, when all environment is up and running, you may use following instructions to modify source code:
 
-- To modify demo stylesheets, edit `src/sass/*.scss` files.
-- To modify demo JavaScript, edit `src/js/*.js` file.
-- To modify demo markup, edit `src/index.html` file.
+- To modify demo stylesheets, edit `src/styles/*.scss` files.
+- To modify demo JavaScript, edit `src/scripts/*.js` file.
+- To modify demo markup, edit `public/index.html` file.
 
 ### With no additional requirements
 
@@ -44,14 +44,14 @@ This option doesn't require Node.js and npm installation.
 Also it imposes some limitations on demo source code modification process.
 
 - To run the demo, please, open index.html page.
-- To modify demo stylesheets, please add your own `<styles>` section to `src/index.html` file.
-- Unfortunately, here is no way to modify demo JavaScript code except adding your own `<script>` section to `src/index.html` file.
-- To modify demo markup, edit `src/index.html` file.
+- To modify demo stylesheets, please add your own `<styles>` section to `public/index.html` file.
+- Unfortunately, here is no way to modify demo JavaScript code except adding your own `<script>` section to `public/index.html` file.
+- To modify demo markup, edit `public/index.html` file.
 - To make a production build you need to copy all required files to distribution folder by your own.
 
 ## Running on production
 
-All production files are located in [distribution](https://github.com/anychart-solutions/big-data-speed-test/tree/master/dist) folder.
+All production files are located in [public](https://github.com/anychart-solutions/big-data-speed-test/tree/master/public) folder.
 In case you did some modification of the source code, you need to rebuild production files as mentioned in [Using Node.js and npm](#using-node.js-and-npm) section or manually using following command.
 
 ```
@@ -60,7 +60,7 @@ yarn build
 
 ## Installing requirements
 
-To run demo development environment, please, ensure you have installed [Git](https://git-scm.com/), [Node.js](https://nodejs.org/), [npm](https://www.npmjs.com/) and [gulp](http://gulpjs.com/), overwise:
+To run demo development environment, please, ensure you have installed [Git](https://git-scm.com/), [Node.js](https://nodejs.org/), [npm](https://www.npmjs.com/) and [yarn](http://yarnpkg.com/), overwise:
 
 - To install Node.js and npm, visit [installation instructions](https://docs.npmjs.com/getting-started/installing-node) page.
 - To install yarn globally using `npm install yarn -g` command.
