@@ -5,6 +5,7 @@
   color: #ffffff;
   background-color: #1c75ba;
   border-color: #1c75ba;
+  -webkit-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
   text-transform: uppercase; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active,
@@ -49,6 +50,7 @@
     border: 5px solid #1c75ba;
     margin: 0 auto;
     position: relative;
+    -webkit-animation: rotateplane 3s infinite;
     animation: rotateplane 3s infinite; }
   .anychart-loader .chart-row {
     position: absolute;
@@ -70,30 +72,38 @@
     .anychart-loader .chart-row .chart-col.green {
       background: #26a957;
       height: 50%;
+      -webkit-animation: blinkplane 1.5s infinite;
       animation: blinkplane 1.5s infinite; }
     .anychart-loader .chart-row .chart-col.orange {
       background: #ff8207;
       height: 70%;
+      -webkit-animation: blinkplane 1.5s infinite 0.15s;
       animation: blinkplane 1.5s infinite 0.25s; }
     .anychart-loader .chart-row .chart-col.red {
       background: #f0402e;
       height: 90%;
+      -webkit-animation: blinkplane 1.5s infinite 0.3s;
       animation: blinkplane 1.5s infinite 0.5s; }
 
 @keyframes rotateplane {
   0% {
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
     opacity: 1; }
   25% {
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
     transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
     opacity: 0.3; }
   50% {
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
     transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
     opacity: 1; }
   75% {
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(-180.1deg);
     transform: perspective(120px) rotateX(0deg) rotateY(-180.1deg);
     opacity: 0.3; }
   100% {
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
     opacity: 1; } }
 
@@ -117,20 +127,39 @@ body {
   color: #323c44;
   background-color: #ffffff; }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
   color: inherit; }
 
-h4, .h4, h5, .h5, h6, .h6 {
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   margin-top: 0;
   margin-bottom: 20px; }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: 20px; }
 
-p, ul, ol {
+p,
+ul,
+ol {
   margin: 0 0 20px; }
 
 .anystock-speed-test-container {
@@ -181,3 +210,4 @@ p, ul, ol {
 
 .pull-right {
   float: right !important; }
+
