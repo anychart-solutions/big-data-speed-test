@@ -1,3 +1,6 @@
 .idea
 .DS_Store
 node_modules
+*.lock
+public/assets/scripts/
+public/assets/styles/
