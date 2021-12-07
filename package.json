@@ -31,7 +31,7 @@
     "VML"
   ],
   "dependencies": {
-    "anychart": "^8.0.0"
+    "anychart": "latest"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
